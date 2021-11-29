@@ -21,7 +21,6 @@ mkdir -p "${uboot_bin}"
 
 # clone u-boot
 git -C ${build_dir} clone https://github.com/u-boot/u-boot
-git -C ${uboot_dir} checkout ${release} -b tmp
 
 echo "patching.."
 
