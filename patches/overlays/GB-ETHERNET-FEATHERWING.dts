@@ -22,7 +22,7 @@
 			#size-cells = <0>;
 			cs-gpios = <&pioA PIN_PB7 0>;
 			status = "okay";
-			w5500: ethernet@1 {
+			w5500: ethernet@0 {
 				compatible = "wiznet,w5500";
 				pinctrl-names = "default";
 				pinctrl-0 = <&w5500_pins>;
