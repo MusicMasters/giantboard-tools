@@ -1,8 +1,8 @@
 #!/bin/bash -ex
 
-rfs_username="debian"
-rfs_password="temppwd"
-rfs_fullname="debian"
+rfs_username="dante"
+rfs_password="dante"
+rfs_fullname="dante"
 rfs_hostname="giantboard"
 
 export LC_ALL=C
