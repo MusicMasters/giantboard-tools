@@ -26,7 +26,7 @@ echo "patching.."
 
 cp patches/u-boot/at91-sama5d27_giantboard.dts ${uboot_dir}/arch/arm/dts/
 cp patches/u-boot/sama5d27_giantboard_mmc_defconfig ${uboot_dir}/configs/
-patch -d ${uboot_dir} -p1 < patches/u-boot/giantboard-fixes.patch 
+patch -d ${uboot_dir} -p1 < ${patch_dir}/giantboard-fixes.patch
 
 echo "patches complete.."
 
