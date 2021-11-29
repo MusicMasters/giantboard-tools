@@ -29,7 +29,6 @@ mkdir -p "${images_dir}"
 if [ ! -d "${linux_dir}" ]; then
 	echo "Getting ${release} kernel from https://github.com/torvalds/linux.."
 	git -C ${build_dir} clone https://github.com/torvalds/linux.git
-    git -C ${linux_dir} checkout ${release} -b tmp
 fi
 
 # always do a checkout to see if chosen kernel version has changed
