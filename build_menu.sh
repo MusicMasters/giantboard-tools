@@ -60,7 +60,7 @@ make_image () {
 	scripts/make-image.sh
 }
 
-read -p "Enter selection [1-7] > " option
+read -p "Enter selection [1-9] > " option
 
 case $option in
 	1)
