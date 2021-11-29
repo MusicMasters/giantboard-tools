@@ -23,16 +23,13 @@ mkdir -p "${uboot_bin}"
 git -C ${build_dir} clone https://github.com/u-boot/u-boot
 
 echo "patching.."
-
-cp patches/u-boot/at91-sama5d27_giantboard.dts ${uboot_dir}/arch/arm/dts/
-cp patches/u-boot/sama5d27_giantboard_mmc_defconfig ${uboot_dir}/configs/
 patch ${uboot_dir}/include/configs/sama5d27_som1_ek.h ${patch_dir}/sama5d27_som1_ek.h.patch
 
 echo "patches complete.."
 
 echo "starting u-boot build.."
 make -j"${cores}" -C ${uboot_dir} ARCH=arm CROSS_COMPILE=${CC} distclean
-make -j"${cores}" -C ${uboot_dir} ARCH=arm CROSS_COMPILE=${CC} sama5d27_giantboard_mmc_defconfig
+make -j"${cores}" -C ${uboot_dir} ARCH=arm CROSS_COMPILE=${CC} sama5d27_giantboard_defconfig
 make -j"${cores}" -C ${uboot_dir} ARCH=arm CROSS_COMPILE=${CC}
 
 cp -v ${uboot_dir}/u-boot.bin ${uboot_bin}
