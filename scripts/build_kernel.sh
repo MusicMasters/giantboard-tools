@@ -38,9 +38,9 @@ export KBUILD_BUILD_USER="giantboard"
 export KBUILD_BUILD_HOST="giantboard"
 
 echo "applying patches.."
-cp patches/kernel/at91-sama5d27_giantboard.dtsi ${linux_dir}/arch/arm/boot/dts/
-cp patches/kernel/at91-sama5d27_giantboard.dts ${linux_dir}/arch/arm/boot/dts/
-cp patches/kernel/giantboard_defconfig ${linux_dir}/arch/arm/configs
+cp ${patch_dir}/at91-sama5d27_giantboard.dtsi ${linux_dir}/arch/arm/boot/dts/
+cp ${patch_dir}/at91-sama5d27_giantboard.dts ${linux_dir}/arch/arm/boot/dts/
+cp ${patch_dir}/giantboard_defconfig ${linux_dir}/arch/arm/configs
 sed -i '59i at91-sama5d27_giantboard.dtb \\' ${linux_dir}/arch/arm/boot/dts/Makefile
 
 
@@ -49,8 +49,8 @@ rm -rf ${linux_dir}/drivers/staging/wilc1000
 mkdir -p ${linux_dir}/drivers/staging/wilc1000
 git clone https://github.com/linux4wilc/driver.git
 mv driver/wilc/* ${linux_dir}/drivers/staging/wilc1000/
-patch -d ${linux_dir} -p1 < patches/kernel/Kconfig.patch
-patch -d ${linux_dir} -p1 < patches/kernel/Makefile.patch  
+patch -d ${linux_dir} -p1 < ${patch_dir}/Kconfig.patch
+patch -d ${linux_dir} -p1 < ${patch_dir}/Makefile.patch  
 rm -rf driver
 
 
@@ -64,6 +64,7 @@ fi
 
 # only call with defconfig if a config file doesn't exist already
 if [ ! -f "${linux_dir}/.config" ]; then
+	cp ${patch_dir}/giantboard.config ${linux_dir}/.config
 	${cross_make} giantboard_defconfig
 fi
 
