@@ -41,7 +41,7 @@ echo "applying patches.."
 cp patches/kernel/at91-sama5d27_giantboard.dtsi ${linux_dir}/arch/arm/boot/dts/
 cp patches/kernel/at91-sama5d27_giantboard.dts ${linux_dir}/arch/arm/boot/dts/
 cp patches/kernel/giantboard_defconfig ${linux_dir}/arch/arm/configs
-sed -i '50i at91-sama5d27_giantboard.dtb \\' ${linux_dir}/arch/arm/boot/dts/Makefile
+sed -i '59i at91-sama5d27_giantboard.dtb \\' ${linux_dir}/arch/arm/boot/dts/Makefile
 
 
 # Add wifi driver to source tree
