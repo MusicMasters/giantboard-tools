@@ -65,7 +65,7 @@ fi
 # only call with defconfig if a config file doesn't exist already
 if [ ! -f "${linux_dir}/.config" ]; then
 	cp ${patch_dir}/giantboard.config ${linux_dir}/.config
-	${cross_make} giantboard_defconfig
+	#${cross_make} giantboard_defconfig
 fi
 
 ${cross_make} menuconfig
