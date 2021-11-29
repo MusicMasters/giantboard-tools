@@ -75,6 +75,7 @@ adafruit-circuitpython-pcf8523
 adafruit-circuitpython-pn532
 adafruit-circuitpython-pixie
 adafruit-circuitpython-ra8875
+adafruit-circuitpython-requests
 adafruit-circuitpython-rfm69
 adafruit-circuitpython-rfm9x
 adafruit-circuitpython-rgb-display
@@ -112,6 +113,7 @@ adafruit-circuitpython-veml7700
 adafruit-circuitpython-vl53l0x
 adafruit-circuitpython-vl6180x
 adafruit-circuitpython-vs1053
+adafruit-circuitpython-wiznet5k
 adafruit-circuitpython-ws2801
 adafruit-circuitpython-avrprog
 adafruit-circuitpython-bitmap-font
