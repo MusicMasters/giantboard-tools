@@ -45,13 +45,13 @@ sed -i '59i at91-sama5d27_giantboard.dtb \\' ${linux_dir}/arch/arm/boot/dts/Make
 
 
 # Add wifi driver to source tree
-rm -rf ${linux_dir}/drivers/staging/wilc1000
-mkdir -p ${linux_dir}/drivers/staging/wilc1000
-git clone https://github.com/linux4wilc/driver.git
-mv driver/wilc/* ${linux_dir}/drivers/staging/wilc1000/
-patch -d ${linux_dir} -p1 < ${patch_dir}/Kconfig.patch
-patch -d ${linux_dir} -p1 < ${patch_dir}/Makefile.patch  
-rm -rf driver
+#rm -rf ${linux_dir}/drivers/staging/wilc1000
+#mkdir -p ${linux_dir}/drivers/staging/wilc1000
+#git clone https://github.com/linux4wilc/driver.git
+#mv driver/wilc/* ${linux_dir}/drivers/staging/wilc1000/
+#patch -d ${linux_dir} -p1 < ${patch_dir}/Kconfig.patch
+#patch -d ${linux_dir} -p1 < ${patch_dir}/Makefile.patch  
+#rm -rf driver
 
 
 echo "preparing kernel.."
