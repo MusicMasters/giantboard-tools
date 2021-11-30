@@ -68,6 +68,9 @@ cp -v ${images_dir}/at91-sama5d27_giantboard.dtb /media/boot/dtbs/
 # copy kernel modules
 cp -av ${modules_dir}/lib/ /media/rootfs/usr/
 
+# copy eth0 configuration
+cp -av ${patch_dir}/eth0 /media/rootfs/etc/network/interfaces.d/
+
 # copy overlays
 mkdir -p /media/boot/overlays/
 cp -av ${overlays_dir}/ /media/boot/
